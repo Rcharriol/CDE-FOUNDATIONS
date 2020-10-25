@@ -23,18 +23,9 @@ docker run --name=user_mysql_1 --env="MYSQL_ROOT_PASSWORD=root_password" -p 3306
 ```sh
 # Maybe you'll want to use a virtualenv
 pip3 install sqlalchemy pandas
-python3 Docker/etl.py
+python3 etl.py
 ```
 ### 5:
-    First we check
-    select avg(book_rating) as average from book_ratings;
-
-    select
-        isbn,
-        avg(book_rating) as average,
-        count(*) as count
-    from book_ratings
-    group by isbn
-    order by avg(book_rating) DESC
-    having avg(book_rating) > 3.5
-    limit 5;
+```sh
+python3 analytics.py
+```
