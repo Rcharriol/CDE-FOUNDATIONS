@@ -1,0 +1,9 @@
+FROM python:3
+run python3 -m pip install sqlalchemy pandas pymysql cryptography
+ADD BX-Users.csv /
+ADD BX-Books.csv /
+ADD BX-Book-Ratings.csv /
+ADD etl.py /
+ADD analytics.py /
+RUN [ "python", "./etl.py" ]
+CMD [ "python", "./analytics.py" ]

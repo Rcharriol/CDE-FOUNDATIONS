@@ -1,2 +1,1 @@
-# CDE-FOUNDATIONS
-Itba 1st
+# Repository with all practic exercise from Itba CDE Foundation course
