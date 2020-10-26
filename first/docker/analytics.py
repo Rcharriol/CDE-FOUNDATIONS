@@ -11,7 +11,7 @@ tables = {
 }
 
 # connect to database
-engine = db.create_engine("mysql+pymysql://root:root_password@localhost:3306/books")
+engine = db.create_engine("mysql+pymysql://root:root_password@mysql_database:3306/books")
 connection = engine.connect()
 
 avg = connection.execute("""
@@ -34,6 +34,7 @@ r_avg = connection.execute("""
 
 r_avg = r_avg.first()[0]
 logging.info("The average rating of a rated book is {}".format(r_avg))
+logging.info("(next query takes some time, sry)")
 
 good_books = connection.execute("""
     select

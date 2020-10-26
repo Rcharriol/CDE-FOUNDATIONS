@@ -12,9 +12,9 @@ tables = {
 }
 
 # connect to database
-engine = db.create_engine("mysql+pymysql://root:root_password@localhost:3306/books")
+engine = db.create_engine("mysql+pymysql://root:root_password@mysql_database:3306/books")
 connection = engine.connect()
-
+logging.info("Initializating database:              (remember, warnings are not errors)")
 for table in tables:
     a = time()
 
